@@ -1,0 +1,34 @@
+
+<div class="all">
+    <div class="container">
+        <form [formGroup]="editRecipeForm" class="form-container" (ngSubmit)="saveChanges()">
+         
+          <label>שם המתכון</label>
+            <input matInput formControlName="recipeName" class="input-field">
+      
+          <div >
+                <label>קטגוריה</label>
+                <select formControlName="categoryCode">
+                    <option *ngFor="let category of categoryList" [value]="category.id">
+                      {{ category.name }}
+                      <img src="{{ category.iconPath }}" alt="icon"/>
+                    </option>
+                  </select>
+        </div>
+      
+            <label>זמן הכנה (בדקות)</label>
+            <input matInput type="number" formControlName="preparationTimeInMinutes" class="input-field">
+      
+            <label>רמת קושי</label>
+            <input matInput type="number" formControlName="difficultyLevel" class="input-field">
+      
+            <label>רכיבים (מופרדים בפסיק)</label>
+            <textarea matInput formControlName="ingredients" class="input-field"></textarea>
+      
+            <label>שלבי ההכנה (כל שלב בשורה נפרדת)</label>
+            <textarea matInput formControlName="preparationSteps" class="input-field"></textarea>
+      
+          <button [disabled]="!this.editRecipeForm.valid" mat-raised-button color="primary"  type="submit">שמור שינויים</button>
+        </form>
+    </div>
+    </div>

@@ -1,0 +1,13 @@
+<form [formGroup]="this.filterForm" class="form-group row mb-3">
+  <div class="col-sm-10">
+    <input type="text" formControlName="inputCategory" class="form-control" value="name" placeholder="Search Category">
+    <select id="category" formControlName="selectedCategory" class="form-select">
+      <option *ngFor="let category of categoryList" [value]="category.id">{{category.name}}</option>
+    </select>
+  </div>
+</form>
+<div class="recipe-container">
+  <div *ngFor="let recipe of recipesListFilter" class="recipe-item">
+    <app-small-recipe [recipe]="recipe"></app-small-recipe>
+  </div>
+</div>

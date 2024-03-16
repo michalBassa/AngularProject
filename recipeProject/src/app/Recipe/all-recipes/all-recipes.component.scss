@@ -1,0 +1,11 @@
+.recipe-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping to next row */
+}
+
+.recipe-item {
+  display: inline-block;
+  margin-left: 5vw;
+  white-space: nowrap; /* Prevent text wrapping within tabs */
+  margin-bottom: 15px;
+}
